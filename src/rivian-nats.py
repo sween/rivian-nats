@@ -34,7 +34,8 @@ async def run(loop):
             # Speak to the Rivian
             os.system('echo %s | festival --tts' % msg.data.decode())
         except Exception as e:
-            print("Status: " + str(e))
+            print("Dial Tone: " + str(nc.is_connected))
+            #print("Status: " + str(e))
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
